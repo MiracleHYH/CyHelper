@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>591</width>
+    <height>923</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>591</width>
+    <height>923</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>CyHelper 2.0 Stable | 3字节x12通道版</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QPushButton" name="USBOpenButton">
+         <property name="text">
+          <string>连接USB</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>发送</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="title">
+             <string>循环测试</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>发送间隔(ms)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="sendDuration">
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>2000</number>
+               </property>
+               <property name="singleStep">
+                <number>1</number>
+               </property>
+               <property name="value">
+                <number>1000</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="loopSendButton">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>循环发送</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="loopStopButton">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>停止发送</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="title">
+             <string>单次发送</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="2" column="0" colspan="2">
+              <widget class="QLineEdit" name="sendBuffer"/>
+             </item>
+             <item row="3" column="0" colspan="2">
+              <widget class="QPushButton" name="sendOnceButton">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>发送一次</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>BUF长度(DEC)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>BUF数据(HEX) 格式:两位16进制数为一字节,以字节为单位,高位为0时不可省略 示例:01A4FF4308</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QSpinBox" name="sendBufferLength">
+               <property name="maximum">
+                <number>512</number>
+               </property>
+               <property name="displayIntegerBase">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>接收</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="1">
+           <widget class="QPushButton" name="stopReceiveButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>停止接收</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="startReceiveButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>开始接收</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QRadioButton" name="saveToDisk">
+            <property name="text">
+             <string>存盘</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="QGroupBox" name="groupBox_5">
+            <property name="title">
+             <string>原始数据</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QTableWidget" name="originalDataTable">
+               <property name="editTriggers">
+                <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+               <attribute name="horizontalHeaderCascadingSectionResizes">
+                <bool>false</bool>
+               </attribute>
+               <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                <bool>false</bool>
+               </attribute>
+               <attribute name="horizontalHeaderStretchLastSection">
+                <bool>false</bool>
+               </attribute>
+               <attribute name="verticalHeaderStretchLastSection">
+                <bool>false</bool>
+               </attribute>
+               <column>
+                <property name="text">
+                 <string>分流电压 (V)</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>总线电压 (V)</string>
+                </property>
+               </column>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>591</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
